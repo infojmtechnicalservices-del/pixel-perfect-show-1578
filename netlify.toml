@@ -1,0 +1,15 @@
+[build]
+  command = "bun install && bun run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Every page is prerendered to dist/client/<route>/index.html, so Netlify
+# serves real files for /, /electrical/, /plumbing/, /welding/, /building/,
+# /about/, /contact/ and /quote/ (including on refresh).
+# Fallback: any other path loads the app shell (non-forced, so real files win).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
