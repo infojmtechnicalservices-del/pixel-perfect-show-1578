@@ -13,7 +13,7 @@ export const btn = {
   outline: cn(base, "border-navy bg-transparent text-navy hover:bg-navy hover:text-navy-foreground"),
 };
 
-export function CtaGroup({ message, dark = true, className }: { message?: string; dark?: boolean; className?: string }) {
+export function CtaGroup({ message, dark = true, className }: { message?: string | undefined; dark?: boolean; className?: string }) {
   return (
     <div className={cn("flex flex-wrap gap-3", className)}>
       <a href={waHref(message)} target="_blank" rel="noopener noreferrer" className={btn.whatsapp}>
@@ -29,7 +29,7 @@ export function CtaGroup({ message, dark = true, className }: { message?: string
   );
 }
 
-export function FinalCta({ message, heading = "Need a tradesman today?" }: { message?: string; heading?: string }) {
+export function FinalCta({ message, heading = "Need a tradesman today?" }: { message?: string | undefined; heading?: string }) {
   return (
     <section className="bg-navy text-navy-foreground">
       <div className="hazard h-2" />
