@@ -1,21 +1,27 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
-//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
-//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Every public page is prerendered to static <route>/index.html so the site
-// can be served by any static host (e.g. Netlify) with full HTML for crawlers.
-const PAGES = ["/", "/electrical/", "/plumbing/", "/welding/", "/building/", "/about/", "/contact/", "/quote/"];
+// Every public page is prerendered to static HTML for Netlify/Google.
+const PAGES = [
+  "/",
+  "/electrical/",
+  "/plumbing/",
+  "/welding/",
+  "/building/",
+  "/about/",
+  "/contact/",
+  "/quote/",
+];
 
 export default defineConfig({
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-    prerender: { enabled: true, crawlLinks: false, autoSubfolderIndex: true },
-    pages: PAGES.map((path) => ({ path, prerender: { enabled: true } })),
+    prerender: {
+      enabled: true,
+      crawlLinks: false,
+      autoSubfolderIndex: true,
+    },
+    pages: PAGES.map((path) => ({
+      path,
+      prerender: { enabled: true },
+    })),
   },
 });
