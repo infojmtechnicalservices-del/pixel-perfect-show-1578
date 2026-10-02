@@ -7,7 +7,7 @@ export type ServiceKey = "electrical" | "plumbing" | "welding" | "building";
 
 export interface Service {
   key: ServiceKey;
-  path: "/electrical/" | "/plumbing/" | "/welding/" | "/building/";
+  path: "/electrical" | "/plumbing" | "/welding" | "/building";
   name: string;
   short: string;
   title: string;
@@ -25,7 +25,7 @@ export interface Service {
 export const SERVICES: Record<ServiceKey, Service> = {
   electrical: {
     key: "electrical",
-    path: "/electrical/",
+    path: "/electrical",
     name: "Electrical",
     short: "Fault finding, DB boards, wiring, lights and plugs — plus emergency call-outs when the power goes.",
     title: "Electrician in Cape Town – 24/7 Electrical Repairs | JM Technical",
@@ -54,7 +54,7 @@ export const SERVICES: Record<ServiceKey, Service> = {
   },
   plumbing: {
     key: "plumbing",
-    path: "/plumbing/",
+    path: "/plumbing",
     name: "Plumbing",
     short: "Burst pipes, leaks, geysers, blocked drains, taps and toilets — sorted quickly and neatly.",
     title: "Plumber in Cape Town – Leaks, Geysers & Blocked Drains | JM Technical",
@@ -83,7 +83,7 @@ export const SERVICES: Record<ServiceKey, Service> = {
   },
   welding: {
     key: "welding",
-    path: "/welding/",
+    path: "/welding",
     name: "Welding & Fabrication",
     short: "Gates, burglar bars, palisade fencing, repairs and custom steel fabrication.",
     title: "Welding & Fabrication in Cape Town – Gates, Burglar Bars | JM Technical",
@@ -112,7 +112,7 @@ export const SERVICES: Record<ServiceKey, Service> = {
   },
   building: {
     key: "building",
-    path: "/building/",
+    path: "/building",
     name: "Building & Renovations",
     short: "Renovations, maintenance, plastering, painting and tiling — managed by one team.",
     title: "Builder in Cape Town – Renovations & Maintenance | JM Technical",

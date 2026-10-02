@@ -22,7 +22,7 @@ export function CtaGroup({ message, dark = true, className }: { message?: string
       <a href={telHref} className={dark ? btn.outlineDark : btn.outline}>
         <Phone className="size-4" /> Call {SITE.phoneDisplay}
       </a>
-      <Link to="/quote/" className={btn.primary}>
+      <Link to="/quote" className={btn.primary}>
         <FileText className="size-4" /> Request a Quote
       </Link>
     </div>
