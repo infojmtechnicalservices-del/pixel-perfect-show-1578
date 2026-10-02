@@ -4,7 +4,7 @@ import { faqSchema } from "@/components/site/Faq";
 
 export function serviceHead(key: ServiceKey) {
   const s = SERVICES[key];
-  const path = `${s.path}/`;
+  const path = s.path;
   return {
     ...pageHead({ title: s.title, description: s.description, path }),
     scripts: [

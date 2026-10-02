@@ -6,12 +6,12 @@ import { SERVICE_LIST } from "@/lib/services";
 import { btn } from "./Cta";
 
 const NAV = [
-  { to: "/electrical", label: "Electrical" },
-  { to: "/plumbing", label: "Plumbing" },
-  { to: "/welding", label: "Welding" },
-  { to: "/building", label: "Building" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/electrical/", label: "Electrical" },
+  { to: "/plumbing/", label: "Plumbing" },
+  { to: "/welding/", label: "Welding" },
+  { to: "/building/", label: "Building" },
+  { to: "/about/", label: "About" },
+  { to: "/contact/", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
@@ -35,7 +35,7 @@ export function SiteHeader() {
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
           <a href={telHref} className="font-mono text-sm hover:text-primary">{SITE.phoneDisplay}</a>
-          <Link to="/quote" className={btn.primary + " py-2"}>Get a Quote</Link>
+          <Link to="/quote/" className={btn.primary + " py-2"}>Get a Quote</Link>
         </div>
         <button className="lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
@@ -48,7 +48,7 @@ export function SiteHeader() {
               {n.label}
             </Link>
           ))}
-          <Link to="/quote" onClick={() => setOpen(false)} className={btn.primary + " mt-4 w-full"}>Request a Quote</Link>
+          <Link to="/quote/" onClick={() => setOpen(false)} className={btn.primary + " mt-4 w-full"}>Request a Quote</Link>
         </nav>
       )}
     </header>
@@ -87,9 +87,9 @@ export function SiteFooter() {
         <div>
           <p className="eyebrow text-primary">Company</p>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-primary">About</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-            <li><Link to="/quote" className="hover:text-primary">Request a Quote</Link></li>
+            <li><Link to="/about/" className="hover:text-primary">About</Link></li>
+            <li><Link to="/contact/" className="hover:text-primary">Contact</Link></li>
+            <li><Link to="/quote/" className="hover:text-primary">Request a Quote</Link></li>
           </ul>
           <p className="mt-6 text-xs text-steel-light">Areas: {AREAS.join(", ")}.</p>
         </div>

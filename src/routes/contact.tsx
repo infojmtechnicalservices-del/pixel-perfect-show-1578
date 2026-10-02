@@ -51,7 +51,7 @@ function Contact() {
           </div>
         </div>
         <p className="mt-10 text-center">
-          Prefer a form? <Link to="/quote" className="font-bold text-accent hover:underline">Request a quote</Link>
+          Prefer a form? <Link to="/quote/" className="font-bold text-accent hover:underline">Request a quote</Link>
         </p>
       </section>
     </>
