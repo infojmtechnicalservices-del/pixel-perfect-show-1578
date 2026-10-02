@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- All public pages are prerendered via `pages` in vite.config.ts and deployed to Netlify from `dist/client` (see netlify.toml); add new public routes to that list so static hosts serve them.
