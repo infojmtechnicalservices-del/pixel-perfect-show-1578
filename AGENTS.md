@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- All public pages are prerendered via `pages` in vite.config.ts and deployed to Netlify from `dist/client` (see netlify.toml); add new public routes to that list so static hosts serve them.
+- All public pages are prerendered to `dist/client/<route>/index.html` and deployed as static files to Vercel (see vercel.json); add new public routes so Vercel serves them. Do not re-add netlify.toml — the user switched to Vercel.
