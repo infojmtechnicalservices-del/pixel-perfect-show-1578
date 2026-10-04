@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- All public pages are prerendered to `dist/client/<route>/index.html` and deployed as static files to Vercel (see vercel.json); add new public routes so Vercel serves them. Do not re-add netlify.toml — the user switched to Vercel.
+- Keep Vercel configured as a static deployment with `dist/client` as its explicit output directory and framework detection disabled; public pages prerender to `dist/client/<route>/index.html`, so new public routes need no extra deployment config. Do not re-add netlify.toml — the user switched to Vercel.
