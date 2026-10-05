@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Vercel deploys via the Build Output API: `npm run build` runs `scripts/vercel-output.mjs`, which (only when `VERCEL` is set) copies prerendered `dist/client` into `.vercel/output/static`; Vercel ignores `outputDirectory` once its build leaves an empty `.vercel/output`. New public routes need no extra config. Do not re-add netlify.toml — the user switched to Vercel.
+- Vercel deploys via the Build Output API: when `VERCEL` is set, `scripts/vercel-output.mjs` copies prerendered `dist/client` into `.vercel/output/static`; it is hooked into vite.config.ts on process exit (Vercel may bypass the npm build script) and also called by `npm run build`. New public routes need no extra config. Do not re-add netlify.toml — the user switched to Vercel.
