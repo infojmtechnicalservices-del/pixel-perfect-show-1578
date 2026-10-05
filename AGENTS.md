@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Keep Vercel configured as a static deployment with `dist/client` as its explicit output directory and framework detection disabled; public pages prerender to `dist/client/<route>/index.html`, so new public routes need no extra deployment config. Do not re-add netlify.toml — the user switched to Vercel.
+- Vercel deploys via the Build Output API: `npm run build` runs `scripts/vercel-output.mjs`, which (only when `VERCEL` is set) copies prerendered `dist/client` into `.vercel/output/static`; Vercel ignores `outputDirectory` once its build leaves an empty `.vercel/output`. New public routes need no extra config. Do not re-add netlify.toml — the user switched to Vercel.
